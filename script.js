@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.querySelector('.nav-links');
+  const mainContent = document.querySelector('main');
 
   hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('show');
@@ -25,4 +26,34 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Page transition animation on link click
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+
+      if (href && href !== '#') {
+        // Fade out main content
+        if (mainContent) {
+          mainContent.style.transition = 'opacity 0.5s ease';
+          mainContent.style.opacity = 0;
+        }
+
+        // After fade out, navigate to link
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      }
+    });
+  });
+
+  // Fade in main content on page load
+  if (mainContent) {
+    mainContent.style.opacity = 0;
+    window.addEventListener('load', () => {
+      mainContent.style.transition = 'opacity 0.5s ease';
+      mainContent.style.opacity = 1;
+    });
+  }
 });
