@@ -4,57 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gracious Angeli Travel & Tours</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
+  <header class="header">
     <div class="container header-container">
-      <div class="logo">
-        <img src="../Logo_handonly.png" alt="Gracious Angeli Logo" />
+      <a href="index.html" class="logo">
+        <img src="Logo_handonly.png" alt="Gracious Angeli Logo" />
         <span>GRACIOUS ANGELI TRAVEL & TOURS</span>
-      </div>
-      <nav>
+      </a>
+      <nav class="nav">
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="partners.html">Partners</a></li>
-          <li><a href="contacts.html">Contacts</a></li>
+          <li><a href="services/services.html">Services</a></li>
+          <li><a href="partners/partners.html">Partners</a></li>
+          <li><a href="contacts/contacts.html">Contacts</a></li>
         </ul>
-        <div class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </nav>
     </div>
   </header>
 
-  <main class="fade-in">
-    <section id="home" class="hero-section">
-      <div class="hero-content container">
+  <main>
+    <section class="hero-section">
+      <div class="container hero-content">
         <div class="hero-text">
           <h1>Travel With Us</h1>
-          <button id="continueBtn" class="btn-primary">Continue</button>
+          <p>Explore the world with personalized travel experiences tailored just for you.</p>
+          <a href="services/services.html" class="btn-primary">Explore Services</a>
         </div>
         <div class="hero-image">
-          <img src="../Logo.jpg" alt="Plane and Globe" />
+          <img src="Logo.jpg" alt="Plane and Globe" />
         </div>
       </div>
     </section>
 
-    <section id="our-story" class="info-section container">
-      <h2>Our Story</h2>
-      <div class="info-content">
+    <section class="info-section">
+      <div class="container">
+        <h2>Our Story</h2>
         <p>
           Gracious Angeli Travel and Tours is a company with great potential for higher growth and development. Founded in June 1999 and having achieved high standards of development in the tourism industry, it can truly be described as one of the leading travel agencies in the Luzon area. Ms. Judith Balisong Balabag, the general manager and owner of the company, was in charge of the operation for twenty-four (24) years. With these 24 years, she has garnered a lot of working experience to enable her to succeed in her endeavor. When the pandemic ravaged the globe, she has been working on her own and has been able to penetrate into certain fora and platform in this business which she was never aware of, and which are great for this company now.
         </p>
       </div>
     </section>
 
-    <section id="mission-vision" class="info-section container">
-      <h2>Mission and Vision</h2>
-      <div class="info-content" style="text-align: center;">
+    <section class="info-section mission-vision">
+      <div class="container">
+        <h2>Mission and Vision</h2>
         <p>
           Gracious Angeli Travel & Tours is committed to providing our clients with affordable and transparent travel experiences, while ensuring that every detail of their itinerary is managed with utmost care. We strongly believe that travel should be accessible to everyone, regardless of budget, and we strive to create itineraries that are both exciting and cost effective.
         </p>
@@ -65,10 +66,10 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="footer">
     <p>© 2024 Gracious Angeli Travel & Tours. All rights reserved.</p>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
