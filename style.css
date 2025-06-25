@@ -153,6 +153,10 @@ nav {
   opacity: 0;
 }
 
+.hero-text p {
+  margin-bottom: 1.5rem;
+}
+
 .hero-text h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -172,7 +176,7 @@ nav {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 127, 0, 0.6);
+  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.6);
 }
 
 .btn-primary:hover {
