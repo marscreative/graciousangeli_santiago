@@ -21,6 +21,12 @@ body {
   position: relative;
   z-index: 10;
 }
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
 /* Header */
 header {
@@ -203,7 +209,7 @@ nav ul li a.active {
 .info-content p {
   font-size: 1.1rem;
   line-height: 1.8;
-  text-align: justify;
+  text-align: center;
 }
 
 /* Services Section */
