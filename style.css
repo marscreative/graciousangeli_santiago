@@ -8,7 +8,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, #efeeee 0%, #eceaea 50%, #dbdada 100%);
-  color: #f0f0f0;
+  color: #222; /* Changed from #f0f0f0 to #222 for better readability */
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
@@ -261,6 +261,61 @@ nav {
 
 .info-content p:last-child {
   margin-bottom: 0;
+}
+
+/* About Section */
+.about-section {
+  margin: 4rem 0;
+  padding: 2rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #003366cc 0%, #0055a5cc 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 51, 102, 0.6);
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+.about-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ff6600;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 102, 0, 0.8);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+/* About Us cards */
+.about-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,51,102,0.08);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.about-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #003366;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0, 51, 102, 0.8);
+}
+
+.about-card p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
 /* Services Section */
