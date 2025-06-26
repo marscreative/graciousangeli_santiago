@@ -30,13 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Page transition animation on link click
   document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', (e) => {
+      e.preventDefault();
       const href = link.getAttribute('href');
-      if (href && href !== '#' && !href.startsWith('#')) {
-        e.preventDefault();
+
+      if (href && href !== '#') {
+        // Fade out main content
         if (mainContent) {
           mainContent.style.transition = 'opacity 0.5s ease';
           mainContent.style.opacity = 0;
         }
+
+        // After fade out, navigate to link
         setTimeout(() => {
           window.location.href = href;
         }, 500);
@@ -44,12 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Fade in main content on page load, only if not already hidden
+  // Fade in main content on page load
   if (mainContent) {
     mainContent.style.opacity = 0;
-    setTimeout(() => {
+    window.addEventListener('load', () => {
       mainContent.style.transition = 'opacity 0.5s ease';
       mainContent.style.opacity = 1;
-    }, 10);
+    });
   }
 });
