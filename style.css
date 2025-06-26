@@ -7,13 +7,38 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+<<<<<<< HEAD
   background: linear-gradient(135deg, #efeeee 0%, #eceaea 50%, #dbdada 100%);
   color: #3210dc;
+=======
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+  color: #222;
+>>>>>>> 95f16bf337bd6352073dcee9574b83c983cf67d4
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
 }
 
+/* Animated gradient background for each tab */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  background: linear-gradient(270deg, #ffb347, #ffcc33, #6dd5ed, #2193b0, #ee9ca7, #ffdde1);
+  background-size: 1200% 1200%;
+  animation: gradientBG 30s ease infinite;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+@keyframes gradientBG {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
+}
+
+/* Container and layout */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -26,6 +51,22 @@ body {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
+}
+
+/* Softer, more classic rounded shapes and more padding for cards/sections */
+.container, .about-card, .service-card, .partner-text, .contacts-section, .info-section {
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 8px rgba(255,102,0,0.08);
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(2px);
+  padding: 2.5rem 2rem;
+}
+
+/* Add extra padding for cards and sections on mobile */
+@media (max-width: 768px) {
+  .container, .about-card, .service-card, .partner-text, .contacts-section, .info-section {
+    padding: 1.5rem 1rem;
+  }
 }
 
 /* Header */
@@ -79,15 +120,23 @@ nav {
 }
 
 .nav-links li a {
-  color: #f0f0f0;
-  text-decoration: none; /* Remove underline */
-  font-weight: 600;
-  transition: color 0.3s ease;
+  color: #222;
+  font-weight: 700;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.2rem;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
   position: relative;
+  z-index: 1;
 }
 
 .nav-links li a:hover {
   text-decoration: none; /* Ensure no underline on hover */
+}
+
+.nav-links li a.active, .nav-links li a:hover {
+  background: linear-gradient(90deg, #ff6600, #ffb347);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(255,102,0,0.12);
 }
 
 /* Mobile logo and name fit adjustments */
@@ -191,20 +240,42 @@ nav {
 }
 
 .btn-primary {
+<<<<<<< HEAD
   background-color: #f9f9f9;
   color: rgb(41, 18, 213);
+=======
+  background: linear-gradient(90deg, #ff6600, #ffb347, #6dd5ed, #2193b0);
+  background-size: 200% 200%;
+  color: #fff;
+>>>>>>> 95f16bf337bd6352073dcee9574b83c983cf67d4
   border: none;
-  padding: 0.75rem 2rem;
-  font-size: 1.1rem;
+  padding: 0.85rem 2.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 2rem;
   cursor: pointer;
+<<<<<<< HEAD
   transition: background-color 0.3s ease;
   box-shadow: 0 4px 15px rgba(10, 29, 195, 0.6);
 }
 
 .btn-primary:hover {
   background-color: #1d06cb;
+=======
+  box-shadow: 0 4px 18px rgba(255, 102, 0, 0.18);
+  transition: background-position 0.4s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+  margin: 0.5rem 0;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  background-position: 100% 0;
+  transform: translateY(-3px) scale(1.04) rotate(-1deg);
+  box-shadow: 0 8px 32px rgba(255, 102, 0, 0.25);
+>>>>>>> 95f16bf337bd6352073dcee9574b83c983cf67d4
 }
 
 .hero-image {
@@ -224,8 +295,13 @@ nav {
 /* Info Sections */
 .info-section {
   margin: 4rem 0;
+<<<<<<< HEAD
   background: linear-gradient(135deg, #a7a7a7dc 0%, #d6d6d6cc 100%);
   color: white;
+=======
+  background: linear-gradient(135deg, #003366cc 0%, #0055a5cc 100%);
+  color: #222;
+>>>>>>> 95f16bf337bd6352073dcee9574b83c983cf67d4
   padding: 2rem;
   border-radius: 20px;
   font-family: 'Montserrat', sans-serif;
@@ -261,6 +337,67 @@ nav {
 
 .info-content p:last-child {
   margin-bottom: 0;
+}
+
+/* About Section */
+.about-section {
+  margin: 4rem 0;
+  padding: 2rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #003366cc 0%, #0055a5cc 100%);
+  color: #222;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 51, 102, 0.6);
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+.about-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ff6600;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 102, 0, 0.8);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+/* About Us cards */
+.about-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,51,102,0.08);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  color: #222;
+  transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-8px) scale(1.03) rotate(-1deg);
+  box-shadow: 0 16px 40px rgba(255, 102, 0, 0.18);
+}
+
+.about-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #003366;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0, 51, 102, 0.8);
+}
+
+.about-card p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
 /* Services Section */
@@ -370,7 +507,7 @@ nav {
   max-width: 900px;
   margin: 0 auto;
   background: linear-gradient(135deg, #003366cc 0%, #0055a5cc 100%);
-  color: white;
+  color: #222;
   padding: 1.5rem;
   border-radius: 20px;
   font-size: 1rem;
@@ -383,7 +520,7 @@ nav {
 .contacts-section {
   margin: 4rem 0;
   background: linear-gradient(135deg, #003366cc 0%, #0055a5cc 100%);
-  color: white;
+  color: #222;
   padding: 2rem;
   border-radius: 20px;
   text-align: center;
@@ -522,6 +659,24 @@ a:hover {
   }
 }
 
+/* Section fade-in animation */
+main > section, .service-card, .about-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s cubic-bezier(.25,.8,.25,1) forwards;
+}
+main > section:nth-child(1) { animation-delay: 0.1s; }
+main > section:nth-child(2) { animation-delay: 0.3s; }
+.service-card { animation-delay: 0.2s; }
+.about-card { animation-delay: 0.2s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-content {
@@ -594,4 +749,50 @@ a:hover {
   background-color: transparent;
   display: block;
   margin: 0 auto;
+}
+
+/* Ensure all main content sections use a dark text color for readability, except when on a dark background, where white text is used. This covers all tabs. */
+.info-section, .about-section, .contacts-section, .partners-section, .partner-text {
+  color: #222;
+}
+
+.info-section h2, .about-section h2, .contacts-section h2, .partners-section h2 {
+  color: #ff6600;
+}
+
+/* For white text on dark backgrounds, override as needed */
+.info-section[style*="background"],
+.about-section[style*="background"],
+.contacts-section[style*="background"],
+.partners-section[style*="background"] {
+  color: #f0f0f0;
+}
+
+/* Button ripple effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  background: rgba(255, 102, 0, 0.3);
+  pointer-events: none;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.btn-primary, .service-card a, .about-card a, .contact-list a {
+  position: relative;
+  overflow: hidden;
 }

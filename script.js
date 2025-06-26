@@ -3,14 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nav-links');
   const mainContent = document.querySelector('main');
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-    hamburger.classList.toggle('active');
-  });
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.classList.toggle('active');
+    });
+  }
 
   // Optional: Close menu when clicking outside
   document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+    if (hamburger && navLinks && !hamburger.contains(e.target) && !navLinks.contains(e.target)) {
       navLinks.classList.remove('show');
       hamburger.classList.remove('active');
     }
@@ -27,33 +29,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Page transition animation on link click
+  // Page transition animation on link click (no flicker, smooth fade)
   document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
       const href = link.getAttribute('href');
-
-      if (href && href !== '#') {
-        // Fade out main content
+      if (href && href !== '#' && !href.startsWith('#')) {
+        e.preventDefault();
         if (mainContent) {
-          mainContent.style.transition = 'opacity 0.5s ease';
+          mainContent.style.transition = 'opacity 0.6s cubic-bezier(.25,.8,.25,1)';
           mainContent.style.opacity = 0;
-        }
-
-        // After fade out, navigate to link
-        setTimeout(() => {
+          setTimeout(() => {
+            window.location.href = href;
+          }, 600);
+        } else {
           window.location.href = href;
-        }, 500);
+        }
       }
     });
   });
 
-  // Fade in main content on page load
+  // Fade in main content on page load, only if not already hidden
   if (mainContent) {
     mainContent.style.opacity = 0;
-    window.addEventListener('load', () => {
-      mainContent.style.transition = 'opacity 0.5s ease';
+    requestAnimationFrame(() => {
+      mainContent.style.transition = 'opacity 0.7s cubic-bezier(.25,.8,.25,1)';
       mainContent.style.opacity = 1;
     });
   }
+
+  // Button ripple effect
+  document.querySelectorAll('.btn-primary, .service-card a, .about-card a, .contact-list a').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      const circle = document.createElement('span');
+      circle.className = 'ripple';
+      const rect = btn.getBoundingClientRect();
+      circle.style.left = (e.clientX - rect.left) + 'px';
+      circle.style.top = (e.clientY - rect.top) + 'px';
+      btn.appendChild(circle);
+      setTimeout(() => circle.remove(), 600);
+    });
+  });
 });
