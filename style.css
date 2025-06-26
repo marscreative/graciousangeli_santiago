@@ -8,7 +8,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, #efeeee 0%, #eceaea 50%, #dbdada 100%);
-  color: #f0f0f0;
+  color: #3210dc;
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
@@ -30,7 +30,7 @@ body {
 
 /* Header */
 .header {
-  background: linear-gradient(90deg, #0356a9cc 0%, #e2e1e1cc 100%);
+  background: linear-gradient(90deg, hsla(255, 94%, 45%, 0.969) 0%, hsl(255, 94%, 45%) 100%);
   color: white;
   padding: 1rem 0;
   position: sticky;
@@ -61,7 +61,7 @@ body {
 .logo img {
   height: 40px;
   width: auto;
-  filter: drop-shadow(0 0 3px rgba(255, 102, 0, 0.8));
+  filter: drop-shadow(0 0 3px rgba(12, 12, 12, 0.8));
 }
 
 nav {
@@ -117,7 +117,7 @@ nav {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background: #ff6600;
+  background: #060606;
   transition: width 0.3s ease;
 }
 
@@ -128,7 +128,7 @@ nav {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #ff6600;
+  color: #0d0d0d;
 }
 
 /* Hamburger menu */
@@ -149,14 +149,14 @@ nav {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, rgba(255,102,0,0.8), rgba(255,102,0,0.4)), url('../Logo.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(16, 16, 16, 0.8), rgba(4, 4, 4, 0.4)), url('../Logo.jpg') center/cover no-repeat;
   color: white;
   padding: 4rem 0;
   display: flex;
   align-items: center;
   min-height: 70vh;
   border-radius: 0 0 80px 80px / 40px 40px 0 0;
-  box-shadow: 0 8px 30px rgba(255,102,0,0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
 }
@@ -187,12 +187,12 @@ nav {
   margin-bottom: 1.5rem;
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(255, 102, 0, 0.8);
+  text-shadow: 0 0 10px rgba(34, 3, 231, 0.971);
 }
 
 .btn-primary {
-  background-color: #ff7f00;
-  color: white;
+  background-color: #f9f9f9;
+  color: rgb(41, 18, 213);
   border: none;
   padding: 0.75rem 2rem;
   font-size: 1.1rem;
@@ -200,11 +200,11 @@ nav {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.6);
+  box-shadow: 0 4px 15px rgba(10, 29, 195, 0.6);
 }
 
 .btn-primary:hover {
-  background-color: #e67300;
+  background-color: #1d06cb;
 }
 
 .hero-image {
@@ -218,18 +218,18 @@ nav {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(255,102,0,0.6);
+  box-shadow: 0 8px 20px rgba(15, 15, 209, 0.6);
 }
 
 /* Info Sections */
 .info-section {
   margin: 4rem 0;
-  background: linear-gradient(135deg, #003366cc 0%, #0055a5cc 100%);
+  background: linear-gradient(135deg, #a7a7a7dc 0%, #d6d6d6cc 100%);
   color: white;
   padding: 2rem;
   border-radius: 20px;
   font-family: 'Montserrat', sans-serif;
-  box-shadow: 0 8px 30px rgba(0, 51, 102, 0.6);
+  box-shadow: 0 8px 30px rgba(6, 42, 220, 0.6);
   animation: fadeIn 1.5s ease forwards;
   opacity: 0;
 }
@@ -238,9 +238,9 @@ nav {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #ff6600;
+  color: #0620ce;
   text-align: center;
-  text-shadow: 0 0 8px rgba(255, 102, 0, 0.8);
+  text-shadow: 0 0 8px rgba(23, 13, 215, 0.8);
 }
 
 .info-content p {
