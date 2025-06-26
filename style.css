@@ -225,7 +225,7 @@ nav {
 .info-section {
   margin: 4rem 0;
   background: linear-gradient(135deg, #003366cc 0%, #0055a5cc 100%);
-  color: white;
+  color: #222;
   padding: 2rem;
   border-radius: 20px;
   font-family: 'Montserrat', sans-serif;
@@ -269,7 +269,7 @@ nav {
   padding: 2rem;
   border-radius: 20px;
   background: linear-gradient(135deg, #003366cc 0%, #0055a5cc 100%);
-  color: white;
+  color: #222;
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 51, 102, 0.6);
@@ -425,7 +425,7 @@ nav {
   max-width: 900px;
   margin: 0 auto;
   background: linear-gradient(135deg, #003366cc 0%, #0055a5cc 100%);
-  color: white;
+  color: #222;
   padding: 1.5rem;
   border-radius: 20px;
   font-size: 1rem;
@@ -438,7 +438,7 @@ nav {
 .contacts-section {
   margin: 4rem 0;
   background: linear-gradient(135deg, #003366cc 0%, #0055a5cc 100%);
-  color: white;
+  color: #222;
   padding: 2rem;
   border-radius: 20px;
   text-align: center;
@@ -649,4 +649,21 @@ a:hover {
   background-color: transparent;
   display: block;
   margin: 0 auto;
+}
+
+/* Ensure all main content sections use a dark text color for readability, except when on a dark background, where white text is used. This covers all tabs. */
+.info-section, .about-section, .contacts-section, .partners-section, .partner-text {
+  color: #222;
+}
+
+.info-section h2, .about-section h2, .contacts-section h2, .partners-section h2 {
+  color: #ff6600;
+}
+
+/* For white text on dark backgrounds, override as needed */
+.info-section[style*="background"],
+.about-section[style*="background"],
+.contacts-section[style*="background"],
+.partners-section[style*="background"] {
+  color: #f0f0f0;
 }
