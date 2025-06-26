@@ -661,9 +661,10 @@ main {
 }
 
 .service-card {
-  background-color: white;
+  /* background-color: white; */
+  background: transparent;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  box-shadow: none;
   padding: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
