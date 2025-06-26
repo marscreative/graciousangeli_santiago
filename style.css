@@ -57,6 +57,28 @@ body::before {
   padding: 2.5rem 2rem;
 }
 
+/* Remove white background shape from hero */
+.hero-section.destino-hero {
+  background: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Glassmorphism effect for cards and welcome section */
+.container, .about-card, .service-card, .partner-text, .contacts-section, .info-section, .destino-welcome .container {
+  background: rgba(255,255,255,0.18) !important;
+  box-shadow: 0 8px 32px rgba(8, 8, 8, 0.18), 0 1.5px 8px rgba(11, 11, 11, 0.10) !important;
+  backdrop-filter: blur(12px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(160%) !important;
+  border-radius: 1.5rem !important;
+  border: 1.5px solid rgba(255,255,255,0.22) !important;
+}
+
+/* Make sure text is readable on glass cards */
+.about-card, .service-card, .partner-text, .contacts-section, .info-section, .destino-welcome .container {
+  color: #222 !important;
+}
+
 /* Add extra padding for cards and sections on mobile */
 @media (max-width: 768px) {
   .container, .about-card, .service-card, .partner-text, .contacts-section, .info-section {
@@ -64,27 +86,35 @@ body::before {
   }
 }
 
-/* Header - Destino style: transparent, minimal, no gradients or rounded shapes */
+/* Header - raise navbar slightly and fix logo hitbox/alignment */
 .header {
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0.5rem; /* raise navbar closer to top */
+  left: 0;
+  right: 0;
   background: transparent;
   box-shadow: none;
   z-index: 10;
-  padding: 0.5rem 0 0.5rem 0;
+  padding: 0.1rem 0 0.1rem 0;
   transition: background 0.3s;
 }
 .header .header-container {
   background: transparent;
   box-shadow: none;
   border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  min-height: 40px;
 }
 
 /* --- NAVBAR LOGO & NAME ALIGNMENT FIX --- */
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.45rem;
   font-weight: 700;
   font-size: 1.08rem;
   text-transform: uppercase;
@@ -93,26 +123,58 @@ body::before {
   background: none;
   box-shadow: none;
   border-radius: 0;
-  padding: 0 0.2rem 0 0.1rem;
-  height: 40px;
-  line-height: 40px;
+  padding: 0 0.1rem 0 0.1rem;
+  height: 38px;
+  line-height: 38px;
+  margin-left: -0.5rem; /* shift logo/name left to align with nav links */
+  position: relative;
+  z-index: 2;
 }
 .logo img {
-  height: 32px;
-  width: 32px;
-  min-width: 32px;
-  min-height: 32px;
+  height: 28px;
+  width: 28px;
+  min-width: 28px;
+  min-height: 28px;
   object-fit: contain;
   filter: drop-shadow(0 0 2px rgba(12, 12, 12, 0.6));
   background: none;
   border-radius: 50%;
-  margin-right: 0.2rem;
+  margin-right: 0.15rem;
   margin-bottom: 0;
   display: block;
 }
+.logo span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  padding-top: 2px;
+  white-space: nowrap;
+  max-width: 200px;
+  width: 100%;
+  overflow: visible;
+  font-size: 1.08rem;
+  letter-spacing: 1.2px;
+}
 
-/* NAVBAR STYLES */
-nav {
+@media (max-width: 900px) {
+  .logo span {
+    max-width: 120px;
+    font-size: 0.98rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* Fix logo link hitbox so it doesn't overlap nav links */
+.logo {
+  max-width: 260px;
+  width: auto;
+}
+.logo:hover, .logo:focus {
+  text-decoration: none;
+}
+
+/* Nav links alignment */
+.nav {
   flex: 1;
   display: flex;
   align-items: center;
@@ -131,6 +193,8 @@ nav {
   background: none;
   box-shadow: none;
   border-radius: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .nav-links li a {
@@ -671,6 +735,27 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+/* Uniform service card image size (match video card size) */
+.service-card img, .service-image {
+  width: 320px !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  background-color: #fff;
+  border-radius: 1.2rem;
+  margin-bottom: 1rem;
+  display: block;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+@media (max-width: 600px) {
+  .service-card img, .service-image {
+    width: 100% !important;
+    min-width: 0;
+    height: 140px !important;
+    border-radius: 0.8rem;
+  }
 }
 
 .service-card:hover {
