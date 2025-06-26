@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const href = link.getAttribute('href');
       if (href && href !== '#' && !href.startsWith('#')) {
         e.preventDefault();
-        if (mainContent) {
+        if (mainContent && mainContent.style.opacity !== '0') {
           mainContent.style.transition = 'opacity 0.6s cubic-bezier(.25,.8,.25,1)';
           mainContent.style.opacity = 0;
           setTimeout(() => {
