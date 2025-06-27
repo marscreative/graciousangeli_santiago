@@ -88,26 +88,30 @@ body::before {
 
 /* Header - raise navbar slightly and fix logo hitbox/alignment */
 .header {
-  position: absolute;
-  top: 0.5rem; /* raise navbar closer to top */
-  left: 0;
-  right: 0;
-  background: transparent;
-  box-shadow: none;
-  z-index: 10;
-  padding: 0.1rem 0 0.1rem 0;
-  transition: background 0.3s;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 !important;
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 2000 !important;
+  background: none !important;
+  min-height: 56px !important;
+  height: 56px !important;
+  padding: 0 !important;
 }
 .header .header-container {
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  min-height: 40px;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background: none !important;
+  min-height: 56px !important;
+  height: 56px !important;
 }
 
 /* --- NAVBAR LOGO & NAME ALIGNMENT FIX --- */
@@ -126,7 +130,7 @@ body::before {
   padding: 0 0.1rem 0 0.1rem;
   height: 38px;
   line-height: 38px;
-  margin-left: -0.5rem; /* shift logo/name left to align with nav links */
+  margin-left: 6vw; /* shift logo/name left to align with nav links */
   position: relative;
   z-index: 2;
 }
@@ -197,17 +201,18 @@ body::before {
   z-index: 1;
 }
 
+.nav-links {
+  gap: 1.2rem;
+  margin-right: 6vw !important; /* match logo margin-left for symmetry */
+}
+
 .nav-links li a {
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
   color: #fff;
-  font-weight: 700;
-  border-radius: 0;
-  padding: 0.2rem 0.8rem;
-  font-size: 1.08rem;
-  background: none;
-  box-shadow: none;
-  min-width: unset;
-  text-align: center;
-  letter-spacing: 0.5px;
+  font-size: 1.05rem;
+  padding: 0.18rem 0.7rem;
   transition: color 0.2s, border-bottom 0.2s;
   border: none;
   border-bottom: 2.5px solid transparent;
@@ -225,25 +230,65 @@ body::before {
   display: none;
 }
 
+@media (max-width: 768px) {
+  .nav-links {
+    margin-right: 4vw !important; /* slightly less on mobile for space */
+    margin-left: 0 !important;
+  }
+}
+
 /* Remove extra nav bar shapes and gradients on mobile */
 @media (max-width: 768px) {
   nav ul {
-    background: rgba(0,0,0,0.92);
-    box-shadow: none;
-    border-radius: 0;
+    width: 220px !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    padding: 0.5rem 0.2rem !important;
+    margin: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0 0 0 8px !important;
+    opacity: 1;
+    visibility: visible;
+    top: 50px !important;
+    right: 0 !important;
+  }
+  nav ul.show {
+    width: 220px !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    padding: 0.5rem 0.2rem !important;
+    margin: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0 0 0 8px !important;
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-links {
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links li {
+    margin: 0.5rem 0;
   }
   .nav-links li a {
-    border-radius: 0;
-    background: none;
-    box-shadow: none;
-    border-bottom: 2px solid transparent;
+    font-size: 1rem;
+    padding: 0.4rem 0.75rem;
     color: #fff;
-  }
-  .nav-links li a.active, .nav-links li a:hover {
-    color: #ffcc33;
-    border-bottom: 2px solid #ffcc33;
-    background: none;
-    box-shadow: none;
+    background: none !important;
+    border-radius: 0 !important;
+    min-width: unset;
+    text-align: left;
+    height: auto;
+    line-height: normal;
+    display: block;
+    word-break: normal;
   }
 }
 
@@ -881,6 +926,147 @@ main {
   font-size: 1.5rem;
 }
 
+/* --- CONTACTS PAGE LAYOUT --- */
+.contacts-main {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 2.5rem auto 2rem auto;
+  padding: 2rem 1rem;
+}
+@media (max-width: 900px) {
+  .contacts-main {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.2rem 0.5rem;
+  }
+}
+.contacts-info-card, .contacts-form-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,51,102,0.08);
+  padding: 2rem 1.5rem;
+  color: #222;
+  flex: 1 1 340px;
+  min-width: 280px;
+  max-width: 480px;
+}
+.contacts-info-card {
+  margin-bottom: 1.5rem;
+}
+.contacts-form-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.contacts-form-card h3 {
+  margin-bottom: 1.2rem;
+  color: #05388a;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.contacts-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contacts-form label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  color: #05388a;
+}
+.contacts-form input,
+.contacts-form textarea {
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid #b5c6e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f7faff;
+  resize: none;
+}
+.contacts-form textarea {
+  min-height: 90px;
+  max-height: 200px;
+}
+.contacts-form button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contacts-form button:hover {
+  background: #1256a2;
+}
+.business-hours {
+  margin: 1.2rem 0 1.5rem 0;
+}
+.business-hours h4 {
+  color: #05388a;
+  font-size: 1.08rem;
+  margin-bottom: 0.5rem;
+}
+.business-hours table {
+  width: 100%;
+  font-size: 0.98rem;
+  color: #333;
+}
+.business-hours td {
+  padding: 0.18rem 0.3rem;
+}
+.location-info {
+  background: #eaf2fb;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 0.98rem;
+  color: #05388a;
+  margin-bottom: 1.2rem;
+  border-left: 4px solid #1976d2;
+}
+.get-directions {
+  display: flex;
+  gap: 1rem;
+  margin: 1.2rem 0 0.5rem 0;
+}
+.get-directions a {
+  flex: 1 1 120px;
+  background: #1976d2;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.7rem 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none !important;
+  transition: background 0.2s;
+}
+.get-directions a:hover {
+  background: #1256a2;
+}
+@media (max-width: 600px) {
+  .contacts-main {
+    padding: 0.5rem 0.1rem;
+  }
+  .contacts-info-card, .contacts-form-card {
+    padding: 1.1rem 0.5rem;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .get-directions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
 /* Footer */
 footer {
   background: linear-gradient(90deg, #002244cc 0%, #003366cc 100%);
@@ -946,6 +1132,47 @@ a {
 
 a:hover {
   text-decoration: none !important;
+}
+
+/* --- HEADER: FULLY TRANSPARENT, NO BORDER RADIUS --- */
+.header {
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+.header .header-container {
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+/* --- NAVBAR: REMOVE ALL BORDER RADIUS, FULLY TRANSPARENT BG --- */
+.nav, .nav-links, nav ul, nav ul.show {
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* --- NAVBAR MOBILE VISIBILITY & TRANSPARENCY FIX --- */
+@media (max-width: 768px) {
+  nav ul {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    display: none !important;
+    background: none !important;
+    border-radius: 0 !important;
+  }
+  nav ul.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    background: none !important;
+    border-radius: 0 !important;
+  }
+}
+
+/* --- NAVBAR & HEADER BORDER RADIUS AND BACKGROUND FOR DESKTOP --- */
+.header, .header .header-container, nav ul, .nav-links {
+  border-radius: 0 !important;
+  background: none !important;
 }
 
 /* Animations */
@@ -1019,6 +1246,9 @@ main > section:nth-child(2) { animation-delay: 0.3s; }
     display: flex;
     opacity: 1;
     visibility: visible;
+    background: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
   }
 
   .hamburger {
@@ -1054,62 +1284,215 @@ main > section:nth-child(2) { animation-delay: 0.3s; }
     display: block;
     color: #f0f0f0;
   }
-}
 
-/* Fix navbar alignment across pages */
-
-/* Fix for service images to fit area and remove white background */
-.service-image {
-  width: 320px;
-  height: 240px;
-  object-fit: cover;
-  background-color: transparent;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Ensure all main content sections use a dark text color for readability, except when on a dark background, where white text is used. This covers all tabs. */
-.info-section, .about-section, .contacts-section, .partners-section, .partner-text {
-  color: #222;
-}
-
-.info-section h2, .about-section h2, .contacts-section h2, .partners-section h2 {
-  color: #ff6600;
-}
-
-/* For white text on dark backgrounds, override as needed */
-.info-section[style*="background"],
-.about-section[style*="background"],
-.contacts-section[style*="background"],
-.partners-section[style*="background"] {
-  color: #f0f0f0;
-}
-
-/* Button ripple effect */
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple-effect 0.6s linear;
-  background: rgba(255, 102, 0, 0.3);
-  pointer-events: none;
-  z-index: 2;
-  width: 100px;
-  height: 100px;
-  left: 50%;
-  top: 50%;
-  margin-left: -50px;
-  margin-top: -50px;
-}
-
-@keyframes ripple-effect {
-  to {
-    transform: scale(2.5);
-    opacity: 0;
+  .header {
+    min-height: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    top: 0.1rem !important;
+  }
+  .header .header-container {
+    min-height: 32px !important;
+    height: 32px !important;
+    padding: 0 0.3rem !important;
+  }
+  .logo {
+    height: 28px !important;
+    min-height: 28px !important;
+    font-size: 0.82rem !important;
+    line-height: 28px !important;
+    max-width: 120px !important;
+    padding: 0 0.05rem !important;
+  }
+  .logo img {
+    height: 22px !important;
+    width: 22px !important;
+    min-width: 22px !important;
+    min-height: 22px !important;
+    margin-right: 0.08rem !important;
+  }
+  .logo span {
+    font-size: 0.82rem !important;
+    max-width: 80px !important;
+    padding-top: 0 !important;
   }
 }
 
-.btn-primary, .service-card a, .about-card a, .contact-list a {
+/* Ensure header spans full width and fixes mobile nav issues */
+.header {
+  width: 100vw !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 !important;
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 2000 !important;
+  background: none !important;
+}
+.header .header-container {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background: none !important;
+}
+@media (max-width: 768px) {
+  .header, .header .header-container {
+    min-height: 44px !important;
+    height: 44px !important;
+  }
+  nav ul, nav ul.show {
+    top: 44px !important;
+  }
+}
+
+/* --- CLEANED MOBILE NAV TABS VISIBILITY & ALIGNMENT --- */
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute !important;
+    top: 44px !important; /* match header height */
+    right: 0 !important;
+    left: auto !important;
+    width: 220px !important;
+    max-width: 90vw !important;
+    min-width: 120px !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    z-index: 2050 !important;
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0.5rem 0.2rem !important;
+    overflow-y: auto !important;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  nav ul.show {
+    display: flex !important;
+    flex-direction: column !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: #05388ae6 !important; /* Deep blue, semi-transparent */
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 44px !important;
+    width: 44px !important;
+    margin-left: auto !important;
+    z-index: 2100 !important;
+    cursor: pointer;
+  }
+  .nav-links {
+    width: 100%;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .nav-links li {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  .nav-links li a {
+    font-size: 1rem;
+    padding: 0.4rem 0.75rem;
+    color: #fff;
+    background: none !important;
+    border-radius: 0 !important;
+    min-width: unset;
+    text-align: left;
+    height: auto;
+    line-height: normal;
+    display: block;
+    word-break: normal;
+    width: 100%;
+  }
+}
+
+/* --- REMOVE UNWANTED HEADER LAYER/SHADOW/BORDER --- */
+.header {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+.header .header-container {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* --- LOGO & LOGO TEXT: MOVE TOWARD CENTER (NOT FULLY CENTERED) --- */
+.logo {
+  margin-left: 6vw !important;
+  padding-left: 0.2rem !important;
+}
+
+/* --- HAMBURGER MENU: 3 LINES, NO SOLID SQUARE --- */
+.hamburger {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   position: relative;
-  overflow: hidden;
+  cursor: pointer;
+}
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+  display: block;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  content: '';
+}
+.hamburger span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hamburger span::before {
+  content: '';
+  top: -10px;
+}
+.hamburger span::after {
+  content: '';
+  top: 10px;
+}
+
+/* --- HIDE HAMBURGER ON DESKTOP, SHOW ONLY ON MOBILE --- */
+.hamburger {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex !important;
+  }
+}
+
+/* --- NAV LINKS: MOVE AWAY FROM RIGHT EDGE FOR SYMMETRY --- */
+.nav-links {
+  margin-right: 6vw !important;
+}
+@media (max-width: 900px) {
+  .nav-links {
+    margin-right: 4vw !important;
+  }
 }
