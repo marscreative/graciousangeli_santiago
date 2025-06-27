@@ -1787,7 +1787,7 @@ main > section:nth-child(2) { animation-delay: 0.3s; }
 .service-card h3,
 .service-card p,
 .service-card .service-note {
-  text-align: justify;
+  text-align: center;
 }
 
 .service-card .service-note {
