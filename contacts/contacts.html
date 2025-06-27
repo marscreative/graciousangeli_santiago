@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacts - Gracious Angeli Travel & Tours</title>
-  <link rel="stylesheet" href="../style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="../Logo_circle.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Gracious Angeli Travel & Tours</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body class="contacts-page">
   <header class="header">
-    <div class="container header-container">
+    <div class="header-container">
       <a href="../index.html" class="logo">
-        <img src="../Logo_circle.png" alt="Gracious Angeli Logo" />
-        <span>GRACIOUS ANGELI TRAVEL & TOURS</span>
+        <img src="../Logo_circle.png" alt="Logo">
+        <span>Gracious Angeli Travel & Tours</span>
       </a>
       <nav class="nav">
         <ul class="nav-links">
@@ -21,42 +19,59 @@
           <li><a href="../about/about.html">About Us</a></li>
           <li><a href="../services/services.html">Services</a></li>
           <li><a href="../partners/partners.html">Partners</a></li>
-          <li><a href="contacts.html" class="active">Contacts</a></li>
+          <li><a href="../contacts/contacts.html" class="active">Contacts</a></li>
         </ul>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+      </div>
     </div>
   </header>
-
-  <video autoplay loop muted playsinline class="nav-bg-video" style="position:fixed;z-index:-1;width:100vw;height:100vh;object-fit:cover;top:0;left:0;">
-    <source src="../nav_background/Contacts BG.mp4" type="video/mp4">
-  </video>
-
   <main>
-    <section class="contacts-section">
-      <div class="container">
-        <h2>Contacts</h2>
-        <p class="section-intro">
-          Reach out to Gracious Angeli Travel & Tours through any of the following channels. We are here to assist you with your travel needs.
-        </p>
-        <ul class="contact-list">
-          <li><a href="https://www.facebook.com/graciousangeli" target="_blank" rel="noopener"><span class="icon">📘</span> Gracious Angeli Travel and Tours</a></li>
-          <li><a href="tel:+639958424115"><span class="icon">📞</span> +63-995 842 4115 / +63-931 922 5536</a></li>
-          <li><a href="mailto:graciousangeli.santiago@gmail.com"><span class="icon">✉️</span> graciousangeli.santiago@gmail.com</a></li>
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline id="contacts-bg-video" style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:-1;">
+      <source src="../nav_background/Contacts BG.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="contacts-main">
+      <div class="contacts-info-card">
+        <h2>Contact Information</h2>
+        <ul class="contacts-info-list">
+          <li><span class="icon">📘</span> Gracious Angeli Travel and Tours</li>
+          <li><span class="icon">📞</span> +63-995 842 4115 / +63-931 922 5536</li>
+          <li><span class="icon">✉️</span> graciousangeli.santiago@gmail.com</li>
           <li><span class="icon">📍</span> Level 2 Robinson Santiago Maharlika Highway, Mabini, Santiago City, Isabela, Philippines</li>
         </ul>
+        <div class="business-hours">
+          <h4>Business Hours</h4>
+          <table>
+            <tr><td>Mon - Fri</td><td>9:00 AM - 6:00 PM</td></tr>
+            <tr><td>Saturday</td><td>9:00 AM - 4:00 PM</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
       </div>
-    </section>
+      <div class="contacts-form-card">
+        <h3>Send Us a Message</h3>
+        <form class="contacts-form">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div class="get-directions">
+          <a href="https://maps.google.com/?q=Level+2+Robinson+Santiago+Maharlika+Highway,+Mabini,+Santiago+City,+Isabela,+Philippines" target="_blank">Google Maps</a>
+          <a href="https://waze.com/ul?ll=16.6886,121.5487" target="_blank">Waze</a>
+        </div>
+      </div>
+    </div>
   </main>
-
   <footer>
-    <p>© 2024 Gracious Angeli Travel & Tours. All rights reserved.</p>
+    &copy; 2024 Gracious Angeli Travel & Tours. All rights reserved.
   </footer>
-
   <script src="../script.js"></script>
 </body>
 </html>
