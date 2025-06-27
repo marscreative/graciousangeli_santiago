@@ -1561,3 +1561,9 @@ main > section:nth-child(2) { animation-delay: 0.3s; }
     max-width: 100%;
   }
 }
+
+/* Remove blue background from about-section */
+.about-section {
+  background: none !important;
+  box-shadow: none !important;
+}
