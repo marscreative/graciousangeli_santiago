@@ -7,30 +7,29 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #05388a 100%, #05388a 100%);
+  background: transparent !important;
   color: #222;
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
 }
 
-/* Remove blue transition overlay/fill effect */
 body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 0;
-  background: linear-gradient(270deg, #4756ff, #4756ff, #4756ff, #4756ff, #4756ff, #4756ff);
-  background-size: 1200% 1200%;
-  animation: gradientBG 30s ease infinite;
-  opacity: 0.18;
-  pointer-events: none;
+  display: none !important;
 }
 
-@keyframes gradientBG {
-  0% {background-position:0% 50%}
-  50% {background-position:100% 50%}
-  100% {background-position:0% 50%}
+/* Optional: fade out main content for smoother tab transitions */
+main, .container, .contacts-section, .about-section, .services-section, .partners-section, .info-section {
+  transition: opacity 0.25s cubic-bezier(.4,0,.2,1);
+}
+body.page-transitioning main,
+body.page-transitioning .container,
+body.page-transitioning .contacts-section,
+body.page-transitioning .about-section,
+body.page-transitioning .services-section,
+body.page-transitioning .partners-section,
+body.page-transitioning .info-section {
+  opacity: 0.5;
 }
 
 /* Container and layout */
