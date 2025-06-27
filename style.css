@@ -14,23 +14,12 @@ body {
   position: relative;
 }
 
-/* Animated gradient background for each tab */
+/* Remove blue transition overlay/fill effect */
 body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 0;
-  background: linear-gradient(270deg, #4756ff, #4756ff, #4756ff, #4756ff, #4756ff, #4756ff);
-  background-size: 1200% 1200%;
-  animation: gradientBG 30s ease infinite;
-  opacity: 0.18;
-  pointer-events: none;
-}
-
-@keyframes gradientBG {
-  0% {background-position:0% 50%}
-  50% {background-position:100% 50%}
-  100% {background-position:0% 50%}
+  display: none !important;
+  opacity: 0 !important;
+  background: none !important;
+  animation: none !important;
 }
 
 /* Container and layout */
@@ -182,6 +171,7 @@ body::before {
   flex: 1;
   display: flex;
   align-items: center;
+  height: 100%;
   gap: 2.2rem;
   justify-content: flex-end;
   background: none;
@@ -191,8 +181,10 @@ body::before {
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 2.2rem;
-  margin: 0;
+  margin-right: 6vw;
+  height: 100%;
   padding: 0;
   background: none;
   box-shadow: none;
@@ -206,16 +198,41 @@ body::before {
   margin-right: 6vw !important; /* match logo margin-left for symmetry */
 }
 
+.nav-links li {
+  display: flex !important;
+  align-items: center !important;
+  height: 100%;
+}
+
 .nav-links li a {
+  display: flex !important;
+  align-items: center !important;
+  height: 56px !important;
+  line-height: 56px !important;
+  padding: 0 0.7rem !important;
   background: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   color: #fff;
   font-size: 1.05rem;
-  padding: 0.18rem 0.7rem;
   transition: color 0.2s, border-bottom 0.2s;
   border: none;
   border-bottom: 2.5px solid transparent;
+}
+
+/* --- Ensure nav bar text font is consistent for all tabs --- */
+.nav-links li a {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+}
+@media (max-width: 900px) {
+  .nav-links li a {
+    font-size: 0.98rem !important;
+    letter-spacing: 0.5px !important;
+  }
 }
 
 .nav-links li a.active, .nav-links li a:hover {
@@ -1566,4 +1583,107 @@ main > section:nth-child(2) { animation-delay: 0.3s; }
 .about-section {
   background: none !important;
   box-shadow: none !important;
+}
+
+/* --- FORCE NAVBAR FONT CONSISTENCY FOR ALL STATES --- */
+.nav-links li a,
+.nav-links li a:visited,
+.nav-links li a:active,
+.nav-links li a.active,
+.nav-links li a:hover {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+  color: #ffcc33 !important;
+  border-bottom: 2.5px solid #ffcc33 !important;
+}
+
+@media (max-width: 900px) {
+  .nav-links li a,
+  .nav-links li a:visited,
+  .nav-links li a:active,
+  .nav-links li a.active,
+  .nav-links li a:hover {
+    font-size: 0.98rem !important;
+    letter-spacing: 0.5px !important;
+  }
+}
+
+/* --- ALIGN NAVBAR TABS VERTICALLY AND HORIZONTALLY --- */
+.header .header-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 100%;
+}
+.nav {
+  display: flex !important;
+  align-items: center !important;
+  height: 100%;
+}
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2.2rem !important;
+  margin-right: 6vw !important;
+  height: 100%;
+}
+.nav-links li {
+  display: flex !important;
+  align-items: center !important;
+  height: 100%;
+}
+.nav-links li a,
+.nav-links li a:visited,
+.nav-links li a:active,
+.nav-links li a.active,
+.nav-links li a:hover {
+  display: flex !important;
+  align-items: center !important;
+  height: 56px !important;
+  line-height: 56px !important;
+  padding: 0 0.7rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border-bottom: 2.5px solid transparent !important;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+.nav-links li a.active,
+.nav-links li a:hover {
+  color: #ffcc33 !important;
+  border-bottom: 2.5px solid #ffcc33 !important;
+}
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 1.2rem !important;
+    margin-right: 4vw !important;
+  }
+  .nav-links li a,
+  .nav-links li a:visited,
+  .nav-links li a:active,
+  .nav-links li a.active,
+  .nav-links li a:hover {
+    height: 44px !important;
+    line-height: 44px !important;
+    font-size: 0.98rem !important;
+    letter-spacing: 0.5px !important;
+    padding: 0 0.7rem !important;
+  }
 }
