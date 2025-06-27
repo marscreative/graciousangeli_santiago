@@ -777,7 +777,7 @@ main {
 }
 
 /* Uniform service card image size (match video card size) */
-.service-card img, .service-image {
+.service-card img, .service-image, .service-card video.service-video {
   width: 320px !important;
   height: 180px !important;
   object-fit: cover !important;
@@ -789,7 +789,7 @@ main {
 }
 
 @media (max-width: 600px) {
-  .service-card img, .service-image {
+  .service-card img, .service-image, .service-card video.service-video {
     width: 100% !important;
     min-width: 0;
     height: 140px !important;
