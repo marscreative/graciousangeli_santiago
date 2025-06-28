@@ -1846,8 +1846,8 @@ main > section:nth-child(2) { animation-delay: 0.3s; }
   display: block;
 }
 .custom-footer {
-  background: #0b2536;
-  color: #fff;
+  background: linear-gradient(90deg, #002244cc 0%, #003366cc 100%);
+  color: white;
   padding: 2.5rem 0 1.2rem 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;

@@ -35,15 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const href = link.getAttribute('href');
       if (href && href !== '#' && !href.startsWith('#')) {
         e.preventDefault();
-        if (mainContent && mainContent.style.opacity !== '0') {
-          mainContent.style.transition = 'opacity 0.3s cubic-bezier(.25,.8,.25,1)';
-          mainContent.style.opacity = 0;
-          setTimeout(() => {
-            window.location.href = href;
-          }, 300);
-        } else {
-          window.location.href = href;
-        }
+        // Remove fade out animation to prevent white flicker
+        window.location.href = href;
       }
     });
   });
