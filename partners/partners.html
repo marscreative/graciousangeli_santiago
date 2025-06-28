@@ -95,36 +95,15 @@
       </div>
     </section>
   </main>
-  <footer class="custom-footer">
-    <div class="footer-main">
-      <div class="footer-col">
-        <h3>Gracious Angeli Travel and Tours</h3>
-        <p style="margin-bottom: 20px;">Your trusted travel partner since 1999. We make your travel dreams come true with personalized service and exceptional experiences.</p>
-        <p>DOT Accredited Travel Agency</p>
-      </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="../about/about.html">About Us</a></li>
-          <li><a href="../services/services.html">Services</a></li>
-          <li><a href="../partners/partners.html">Partners</a></li>
-          <li><a href="../contacts/contacts.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Newsletter</h3>
-        <p>Subscribe to our newsletter for the latest travel deals and updates.</p>
-        <form class="newsletter-form" onsubmit="return false;">
-          <input type="email" placeholder="Your email address" required />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-    </div>
-    <hr style="border: none; border-top: 1px solid #234; margin: 1.5rem 0 0.5rem 0;" />
-    <div class="footer-bottom">
-      <p>© 2025 Gracious Angeli Travel & Tours. All rights reserved.</p>
-    </div>
-  </footer>
+  <footer id="footer-placeholder"></footer>
+  <link rel="stylesheet" href="../footer.css" />
+  <script>
+    fetch('../footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
   <script src="../script.js"></script>
 </body>
 </html>
