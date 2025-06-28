@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (href && href !== '#' && !href.startsWith('#')) {
         e.preventDefault();
         if (mainContent && mainContent.style.opacity !== '0') {
-          mainContent.style.transition = 'opacity 0.6s cubic-bezier(.25,.8,.25,1)';
+          mainContent.style.transition = 'opacity 0.3s cubic-bezier(.25,.8,.25,1)';
           mainContent.style.opacity = 0;
           setTimeout(() => {
             window.location.href = href;
-          }, 600);
+          }, 300);
         } else {
           window.location.href = href;
         }
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mainContent) {
     mainContent.style.opacity = 0;
     requestAnimationFrame(() => {
-      mainContent.style.transition = 'opacity 0.7s cubic-bezier(.25,.8,.25,1)';
+      mainContent.style.transition = 'opacity 0.3s cubic-bezier(.25,.8,.25,1)';
       mainContent.style.opacity = 1;
     });
   }

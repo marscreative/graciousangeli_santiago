@@ -29,7 +29,8 @@ body.page-transitioning .about-section,
 body.page-transitioning .services-section,
 body.page-transitioning .partners-section,
 body.page-transitioning .info-section {
-  opacity: 0.5;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Container and layout */
@@ -109,6 +110,10 @@ body.page-transitioning .info-section {
 .header .header-container {
   background: transparent !important;
   border-radius: 0 0 1.5rem 1.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
 }
 @media (max-width: 900px) {
   .header {
@@ -137,7 +142,7 @@ body.page-transitioning .info-section {
   padding: 0 0.1rem 0 0.1rem;
   height: 38px;
   line-height: 38px;
-  margin-left: 6vw; /* shift logo/name left to align with nav links */
+  margin-left: 2vw; /* reduced margin-left to prevent overlap */
   position: relative;
   z-index: 2;
 }
@@ -201,7 +206,7 @@ body.page-transitioning .info-section {
   display: flex;
   align-items: center;
   gap: 2.2rem;
-  margin-right: 6vw;
+  margin-right: 2vw; /* reduced margin-right to balance logo margin */
   height: 100%;
   padding: 0;
   background: none;
@@ -537,7 +542,8 @@ body.page-transitioning .info-section {
 .hero-bg-image {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: url('images/Front BG.JPG') center center/cover no-repeat;
+  /* background image removed to be set inline in index.html */
+  background: none;
   z-index: 1;
   width: 100%;
   height: 100%;
@@ -947,6 +953,7 @@ main {
   max-width: 900px;
   margin: 3.5rem auto 2.5rem auto;
   padding: 0;
+  flex-wrap: nowrap;
 }
 .contacts-info-card, .contacts-form-card {
   max-width: 420px;
@@ -1233,6 +1240,39 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+/* Style for social-connect to match contacts-info-card */
+.social-connect {
+  background: rgba(255,255,255,0.92);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(5,56,138,0.10);
+  padding: 2.2rem 2rem 2.2rem 2.2rem;
+  color: #05388a;
+  min-width: 320px;
+  max-width: 420px;
+  font-size: 1.05rem;
+  text-align: left;
+  margin: 0 0 0 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Footer font style and size adjustment for contacts page */
+body.contacts-page footer {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+body.contacts-page .footer-bottom {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  padding-left: 0.5rem;
 }
 
 /* Fix footer at bottom for contacts page */
