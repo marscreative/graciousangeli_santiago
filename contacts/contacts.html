@@ -33,7 +33,7 @@
   <main>
     <!-- Background Video -->
     <video autoplay muted loop playsinline id="contacts-bg-video"></video>
-    <div class="contacts-main">
+    <div class="contacts-main" style="position: relative; z-index: 10;">
       <div class="contacts-info-card">
         <h2>Contact Information</h2>
         <ul class="contacts-info-list">
@@ -70,6 +70,7 @@
   <footer id="footer-placeholder"></footer>
   <script>
     document.getElementById('contacts-bg-video').innerHTML = '<source src="../nav_background/Contacts BG.mp4" type="video/mp4" />';
+    // Load footer.html content dynamically
     fetch('../footer.html')
       .then(response => response.text())
       .then(data => {
