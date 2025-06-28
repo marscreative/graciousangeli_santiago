@@ -1979,3 +1979,30 @@ main > section:nth-child(2) { animation-delay: 0.3s; }
     gap: 1rem;
   }
 }
+
+/* Add Intro Rust font-face (make sure to add the font files to your project) */
+@font-face {
+  font-family: 'Intro Rust';
+  src: url('fonts/IntroRust.woff2') format('woff2'),
+       url('fonts/IntroRust.woff') format('woff'),
+       url('fonts/IntroRust.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Use Intro Rust for footer and headings */
+.footer-col h3,
+.footer-col p,
+.footer-col ul,
+.footer-col ul li,
+.footer-col ul li a,
+.footer-col form,
+.footer-col input,
+.footer-col button {
+  font-family: 'Intro Rust', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .logo span, .nav-links a {
+  font-family: 'Intro Rust', sans-serif !important;
+}
