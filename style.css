@@ -2069,6 +2069,23 @@ main > section:nth-child(2) { animation-delay: 0.3s; }
   }
 }
 
+/* Bolder, colored headings and strong text for all main sections */
+.about-section h2, .about-section h3, .about-section strong,
+.services-section h2, .services-section h3, .services-section strong,
+.contacts-section h2, .contacts-section h3, .contacts-section strong,
+.partners-section h2, .partners-section h3, .partners-section strong,
+.management-card h2, .management-card h3 {
+  font-weight: 800 !important;
+  color: #003366 !important;
+  text-shadow: none !important;
+  letter-spacing: 0.5px;
+}
+.partner-text strong {
+  font-weight: 700 !important;
+  color: #003366 !important;
+  text-shadow: none !important;
+}
+
 /* Add Intro Rust font-face (make sure to add the font files to your project) */
 @font-face {
   font-family: 'Intro Rust';
@@ -2085,7 +2102,6 @@ main > section:nth-child(2) { animation-delay: 0.3s; }
 .footer-col p,
 .footer-col ul,
 .footer-col ul li,
-.footer-col ul li a,
 .footer-col form,
 .footer-col input,
 .footer-col button {

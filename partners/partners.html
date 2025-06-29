@@ -7,8 +7,24 @@
   <link rel="stylesheet" href="../style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="../Logo_circle.png" />
+  <style>
+    .partners-section h2, .partners-section h3, .partners-section strong, .management-card h2, .management-card h3 {
+      font-weight: 800 !important;
+      color: #003366 !important;
+      text-shadow: none !important;
+      letter-spacing: 0.5px;
+    }
+    .partners-section .partner-text strong {
+      font-weight: 700 !important;
+      color: #003366 !important;
+      text-shadow: none !important;
+    }
+  </style>
 </head>
 <body>
+  <video autoplay loop muted playsinline class="nav-bg-video" style="position:fixed;z-index:-1;width:100vw;height:100vh;object-fit:cover;top:0;left:0;">
+    <source src="../nav_background/PartnerBG2.mp4" type="video/mp4">
+  </video>
   <header class="header">
     <div class="container header-container">
       <a href="../index.html" class="logo">
@@ -31,22 +47,19 @@
       </nav>
     </div>
   </header>
-  <video autoplay loop muted playsinline class="nav-bg-video" style="position:fixed;z-index:-1;width:100vw;height:100vh;object-fit:cover;top:0;left:0;">
-    <source src="../nav_background/PartnerBG2.mp4" type="video/mp4">
-  </video>
   <main>
-    <section class="partners-section">
+    <section class="partners-section" style="position: relative; z-index: 1;">
       <div class="container">
         <div class="management-card">
           <h2>DOT Accredited</h2>
         </div>
-        <div class="partner-logo" style="margin-bottom: 1.5rem; text-align:center;">
-          <img src="../images/DOT Logo.png" alt="Department of Tourism Philippines Logo" style="max-width:180px;max-height:180px;width:100%;height:auto;">
+        <div class="partner-logo dot-partner-logo">
+          <img src="../images/DOT Logo.png" alt="Department of Tourism Philippines Logo" class="responsive-logo">
         </div>
         <div class="partner-text" style="font-size:1.15rem;text-align:center;max-width:700px;margin:0 auto 2rem auto;">
           <strong style="display:block;text-align:center;">Gracious Angeli Travel & Tours is officially accredited by the Department of Tourism (DOT), Philippines.</strong>
           <span style="display:block;text-align:justify;">Our DOT accreditation ensures you are booking with a trusted, government-recognized travel agency committed to quality and safety.</span>
-          <span style="display:block;text-align:justify;margin-top:1rem;">Know all men by these present that Gracious Angeli Travel & Tours with address at Level 2 Robinson Place, Maharlika Highway, Brgy. Mabini, Santiago City having complied with the requirements prescribe by the Department of Tourism in hereby granted regular accreditation as a travel and tour agency pursuant to the provisions of Republic Act No. 9593 and rules regulations promulgated by the Department of Tourism to implement the intent and purpose of the said Republic Act.</span>
+          <span style="display:block;text-align:justify;margin-top:1rem;">Know all men by these present that Gracious Angeli Travel & Tours with address at Level 2 Robinson Place, Maharlika Highway, Brgy. Mabini, Santiago City having complied with the requirements prescribed by the Department of Tourism in hereby granted regular accreditation as a travel and tour agency pursuant to the provisions of Republic Act No. 9593 and rules regulations promulgated by the Department of Tourism to implement the intent and purpose of the said Republic Act.</span>
         </div>
         <div class="management-card">
           <h2>Our Partners</h2>
