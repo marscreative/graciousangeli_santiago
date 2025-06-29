@@ -779,6 +779,15 @@ main {
 .about-card p {
   margin-bottom: 1rem;
   line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+.about-card {
+  padding: 3rem 2rem;
+}
+
+.about-card h3 {
+  font-size: 2rem;
 }
 
 /* Services Section */
