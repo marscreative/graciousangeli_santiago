@@ -1,4 +1,4 @@
-/* Reset and base */
+
 * {
   margin: 0;
   padding: 0;
@@ -236,7 +236,7 @@ body.page-transitioning .info-section {
   background: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
-  color: #fff;
+  color: red !important;
   font-size: 1.05rem;
   transition: color 0.2s, border-bottom 0.2s;
   border: none;
@@ -571,13 +571,13 @@ body.page-transitioning .info-section {
   padding: 3rem 1rem 2rem 1rem;
 }
 .hero-logo {
-  width: 110px;
-  height: 110px;
+  width: 160px !important;
+  height: 160px !important;
   margin-bottom: 1.5rem;
-  border-radius: 50%;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-  background: #fff;
-  object-fit: cover;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
+  object-fit: contain !important;
 }
 .destino-headline {
   font-family: 'Playfair Display', serif;
@@ -1354,11 +1354,11 @@ a:hover {
 
 /* --- HEADER: FULLY TRANSPARENT, NO BORDER RADIUS --- */
 .header {
-  background: transparent !important;
+  background: rgba(0, 0, 0, 0.6) !important;
   border-radius: 0 !important;
 }
 .header .header-container {
-  background: transparent !important;
+  background: rgba(0, 0, 0, 0.6) !important;
   border-radius: 0 !important;
 }
 

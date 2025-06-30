@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About US - Gracious Angeli' Travel & Tours</title>
+  <base href="/" />
   <link rel="stylesheet" href="../style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="../Logo_circle.png" />
@@ -12,28 +13,7 @@
   <video autoplay loop muted playsinline class="nav-bg-video" style="position:fixed;z-index:-1;width:100vw;height:100vh;object-fit:cover;top:0;left:0;">
     <source src="../nav_background/About Us BG.mp4" type="video/mp4">
   </video>
-  <header class="header">
-    <div class="container header-container">
-      <a href="../index.html" class="logo">
-        <img src="../Logo_circle.png" alt="Gracious Angeli Logo" />
-        <span>GRACIOUS ANGELI' TRAVEL & TOURS</span>
-      </a>
-      <nav class="nav">
-        <ul class="nav-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about/about.html" class="active">About Us</a></li>
-          <li><a href="../services/services.html">Services</a></li>
-          <li><a href="../partners/partners.html">Partners</a></li>
-          <li><a href="../contacts/contacts.html">Contacts</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </nav>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
   <main>
     <section class="about-section">
       <div class="container">
@@ -103,5 +83,12 @@
   </script>
   <script src="../script.js"></script>
   <script src="about-carousel.js"></script>
+  <script>
+    fetch('../header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+  </script>
 </body>
 </html>

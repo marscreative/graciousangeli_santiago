@@ -36,15 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Hamburger menu toggle
   const hamburger = document.getElementById('hamburger');
-  const navLinks = document.querySelector('.nav-links');
+  const nav = document.querySelector('.nav');
 
   // New variables for slide
   let currentIndex = 0;
   const cards = container.querySelectorAll('.experience-card');
 
-  if (hamburger && navLinks) {
+  if (hamburger && nav) {
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('nav-active');
+      nav.classList.toggle('open');
       hamburger.classList.toggle('toggle');
     });
   }
