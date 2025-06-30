@@ -1586,6 +1586,95 @@ main > section:nth-child(2) { animation-delay: 0.3s; }
     flex-direction: column;
   }
 
+  /* Popular Destinations - mobile carousel */
+  .destinations-cards {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 1rem !important;
+    padding-bottom: 1rem !important;
+    justify-content: flex-start !important;
+  }
+
+  .destinations-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .destination-card {
+    flex: 0 0 80% !important;
+    max-width: 80% !important;
+    scroll-snap-align: start !important;
+    margin-bottom: 0 !important;
+    width: auto !important;
+    border-radius: 12px !important;
+  }
+
+  .destination-card video {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 200px !important;
+    border-radius: 12px !important;
+  }
+}
+
+  /* Mobile nav toggle styles */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #003366;
+    position: absolute;
+    top: 56px;
+    right: 0;
+    width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  .nav-links.nav-active {
+    display: flex;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 1100;
+  }
+
+  .hamburger span {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+
+  .hamburger.toggle span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  .hamburger.toggle span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  .hamburger.toggle span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
   nav ul {
     opacity: 0;
     visibility: hidden;
@@ -1675,7 +1764,6 @@ main > section:nth-child(2) { animation-delay: 0.3s; }
     max-width: 80px !important;
     padding-top: 0 !important;
   }
-}
 
 /* Ensure header spans full width and fixes mobile nav issues */
 .header {
