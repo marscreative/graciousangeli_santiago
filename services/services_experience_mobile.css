@@ -1,0 +1,71 @@
+/* Mobile view adjustments for travel experience cards */
+@media (max-width: 768px) {
+  .experiences-cards {
+    gap: 0;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    overflow-x: auto; /* Show scrollbar for scroll snap */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+  }
+
+  .experience-card {
+    width: 80vw !important;
+    min-width: 80vw !important;
+    max-width: 80vw !important;
+    margin: 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .experience-card video {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Services cards adjustments */
+  .services-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 1rem 0;
+    justify-content: flex-start;
+  }
+
+  .service-card {
+    flex: 0 0 80vw;
+    max-width: 80vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .service-card video,
+  .service-card img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px;
+  }
+
+  /* Headings and text adjustments */
+  h2 {
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.2rem !important;
+  }
+
+  p,
+  .service-note {
+    font-size: 1rem !important;
+  }
+
+  /* Container adjustments */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
