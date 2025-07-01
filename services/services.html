@@ -3,44 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services - Gracious Angeli Travel & Tours</title>
+  <title>Services - Gracious Angeli' Travel & Tours</title>
   <link rel="stylesheet" href="../style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="../Logo_circle.png" />
+  <link rel="stylesheet" href="services_experience_mobile.css" media="(max-width: 768px)" />
 </head>
 <body>
   <video autoplay loop muted playsinline class="nav-bg-video" style="position:fixed;z-index:-1;width:100vw;height:100vh;object-fit:cover;top:0;left:0;">
     <source src="../nav_background/Services BG.mp4" type="video/mp4">
   </video>
-  <header class="header">
-    <div class="container header-container">
-      <a href="../index.html" class="logo">
-        <img src="../Logo_circle.png" alt="Gracious Angeli Logo" />
-        <span>GRACIOUS ANGELI TRAVEL & TOURS</span>
-      </a>
-      <nav class="nav">
-        <ul class="nav-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../about/about.html">About Us</a></li>
-          <li><a href="services.html" class="active">Services</a></li>
-          <li><a href="../partners/partners.html">Partners</a></li>
-          <li><a href="../contacts/contacts.html">Contacts</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </nav>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
 
   <main>
     <section class="services-section">
       <div class="container">
         <h2>Our Services</h2>
         <p class="section-intro">
-          At Gracious Angeli Travel & Tours, we offer a comprehensive range of travel services designed to meet all your travel needs. Whether you're booking flights, planning a cruise, or seeking visa assistance, our expert team is here to help.
+          At Gracious Angeli' Travel & Tours, we offer a comprehensive range of travel services designed to meet all your travel needs. Whether you're booking flights, planning a cruise, or seeking visa assistance, our expert team is here to help.
         </p>
         <div class="services-cards">
           <div class="service-card">
@@ -99,7 +79,7 @@
     <section class="market-section">
       <div class="container">
         <div class="main-card" style="background: rgba(245,251,255,0.55); border-radius: 18px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 2.2rem 2rem 2rem 2rem; margin-bottom: 2.5rem; border: 1.5px solid rgba(209,227,239,0.35); max-width: 100%;">
-          <h2 style="color: #ff9900; font-family: 'Playfair Display', serif; font-weight: 800; margin-top: 0; margin-bottom: 1.2rem; text-align: left;">Our Market</h2>
+          <h2 style="color: #003366; font-family: 'Playfair Display', serif; font-weight: 800; margin-top: 0; margin-bottom: 1.2rem; text-align: left;">Our Market</h2>
           <p style="color: #222; font-size: 1.08rem; margin-bottom: 1.2rem;">Our target market is the general public, which includes the public and private sector. Corporate booking is very essential for the business to survive. Therefore, our target market are as follows:</p>
           <ul style="color: #222; font-size: 1.08rem; margin-left: 1.2em;">
             <li>Corporate (Private Companies) sector of the economy</li>
@@ -117,19 +97,19 @@
   <section class="experiences-section" style="margin: 2.5rem 0 0 0;">
     <div class="container">
       <h2 style="color: #003366; font-family: 'Playfair Display', serif; font-weight: 800; margin-bottom: 1.5rem;">Travel Experiences</h2>
-      <div class="experiences-cards" style="display: flex; flex-wrap: nowrap; gap: 2rem; justify-content: center; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 1rem;">
-        <div class="experience-card" style="background: #f5fbff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 2px solid #d1e3ef; width: 480px; max-width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 480px;">
+<div id="experiences-cards" class="experiences-cards" style="display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: flex-start; padding-bottom: 1rem;">
+        <div class="experience-card" style="background: #f5fbff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 2px solid #d1e3ef; width: 30%; max-width: 340px; flex-grow: 1; display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
           <div style="width: 100%; display: flex; justify-content: center; align-items: center; padding: 2rem 0 1rem 0;">
-            <video src="../services/services_Experience/Island Hopping.mp4" style="width: 320px; height: 200px; object-fit: cover; border-radius: 12px; background: #e6e6e6; display: block; margin: 0 auto; box-shadow: 0 4px 16px rgba(0,51,102,0.10);" autoplay loop muted playsinline></video>
+            <video src="../services/services_Experience/Island Hopping.mp4" style="width: 100%; max-width: 320px; height: 200px; object-fit: cover; border-radius: 12px; background: #e6e6e6; display: block; margin: 0 auto; box-shadow: 0 4px 16px rgba(0,51,102,0.10);" autoplay loop muted playsinline></video>
           </div>
           <div style="padding: 1.2rem 1.2rem 1.5rem 1.2rem; width: 100%; text-align: center;">
             <h3 style="color: #003366; font-weight: 800; font-size: 1.18rem; margin: 0 0 0.5rem 0; letter-spacing: 1px;">Island Hopping Adventures</h3>
             <p style="color: #2d3a4a; font-size: 1rem; margin: 0;">Explore the hidden gems of the Philippine archipelago.</p>
           </div>
         </div>
-        <div class="experience-card" style="background: #f5fbff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 2px solid #d1e3ef; width: 480px; max-width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 480px;">
+        <div class="experience-card" style="background: #f5fbff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 2px solid #d1e3ef; width: 30%; max-width: 340px; flex-grow: 1; display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
           <div style="width: 100%; display: flex; justify-content: center; align-items: center; padding: 2rem 0 1rem 0;">
-            <video src="../services/services_Experience/Mountain_hiking.mp4" style="width: 320px; height: 200px; object-fit: cover; border-radius: 12px; background: #e6e6e6; display: block; margin: 0 auto; box-shadow: 0 4px 16px rgba(0,51,102,0.10);" autoplay loop muted playsinline></video>
+            <video src="../services/services_Experience/Mountain_hiking.mp4" style="width: 100%; max-width: 320px; height: 200px; object-fit: cover; border-radius: 12px; background: #e6e6e6; display: block; margin: 0 auto; box-shadow: 0 4px 16px rgba(0,51,102,0.10);" autoplay loop muted playsinline></video>
           </div>
           <div style="padding: 1.2rem 1.2rem 1.5rem 1.2rem; width: 100%; text-align: center;">
             <h3 style="color: #003366; font-weight: 800; font-size: 1.18rem; margin: 0 0 0.5rem 0; letter-spacing: 1px;">Mountain Trekking Tours</h3>
@@ -150,5 +130,12 @@
       });
   </script>
   <script src="../script.js"></script>
+  <script>
+    fetch('../header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+  </script>
 </body>
 </html>
