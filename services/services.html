@@ -13,8 +13,28 @@
   <video autoplay loop muted playsinline class="nav-bg-video" style="position:fixed;z-index:-1;width:100vw;height:100vh;object-fit:cover;top:0;left:0;">
     <source src="../nav_background/Services BG.mp4" type="video/mp4">
   </video>
-  <div id="header-placeholder"></div>
-
+  <header class="header">
+  <div class="container header-container">
+    <a href="/index.html" class="logo">
+      <img src="/Logo_circle.png" alt="Gracious Angeli Logo" /> 
+      <span>GRACIOUS ANGELI' TRAVEL & TOURS</span>
+    </a>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about/about.html">About Us</a></li>
+        <li><a href="/services/services.html" class="active">Services</a></li>
+        <li><a href="/partners/partners.html">Partners</a></li>
+        <li><a href="/contacts/contacts.html">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>
   <main>
     <section class="services-section">
       <div class="container">
@@ -96,28 +116,127 @@
   </main>
   <section class="experiences-section" style="margin: 2.5rem 0 0 0;">
     <div class="container">
-      <h2 style="color: #003366; font-family: 'Playfair Display', serif; font-weight: 800; margin-bottom: 1.5rem;">Travel Experiences</h2>
-<div id="experiences-cards" class="experiences-cards" style="display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: flex-start; padding-bottom: 1rem;">
-        <div class="experience-card" style="background: #f5fbff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 2px solid #d1e3ef; width: 30%; max-width: 340px; flex-grow: 1; display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
-          <div style="width: 100%; display: flex; justify-content: center; align-items: center; padding: 2rem 0 1rem 0;">
-            <video src="../services/services_Experience/Island Hopping.mp4" style="width: 100%; max-width: 320px; height: 200px; object-fit: cover; border-radius: 12px; background: #e6e6e6; display: block; margin: 0 auto; box-shadow: 0 4px 16px rgba(0,51,102,0.10);" autoplay loop muted playsinline></video>
+      <h2 class="experiences-title">Travel Experiences</h2>
+      <div class="experiences-cards">
+        <div class="experience-card">
+          <div class="experience-media">
+            <video src="../services/services_Experience/Island Hopping.mp4" autoplay loop muted playsinline></video>
           </div>
-          <div style="padding: 1.2rem 1.2rem 1.5rem 1.2rem; width: 100%; text-align: center;">
-            <h3 style="color: #003366; font-weight: 800; font-size: 1.18rem; margin: 0 0 0.5rem 0; letter-spacing: 1px;">Island Hopping Adventures</h3>
-            <p style="color: #2d3a4a; font-size: 1rem; margin: 0;">Explore the hidden gems of the Philippine archipelago.</p>
+          <div class="experience-info">
+            <h3>Island Hopping Adventures</h3>
+            <p>Explore the hidden gems of the Philippine archipelago.</p>
           </div>
         </div>
-        <div class="experience-card" style="background: #f5fbff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 2px solid #d1e3ef; width: 30%; max-width: 340px; flex-grow: 1; display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
-          <div style="width: 100%; display: flex; justify-content: center; align-items: center; padding: 2rem 0 1rem 0;">
-            <video src="../services/services_Experience/Mountain_hiking.mp4" style="width: 100%; max-width: 320px; height: 200px; object-fit: cover; border-radius: 12px; background: #e6e6e6; display: block; margin: 0 auto; box-shadow: 0 4px 16px rgba(0,51,102,0.10);" autoplay loop muted playsinline></video>
+        <div class="experience-card">
+          <div class="experience-media">
+            <video src="../services/services_Experience/Mountain_hiking.mp4" autoplay loop muted playsinline></video>
           </div>
-          <div style="padding: 1.2rem 1.2rem 1.5rem 1.2rem; width: 100%; text-align: center;">
-            <h3 style="color: #003366; font-weight: 800; font-size: 1.18rem; margin: 0 0 0.5rem 0; letter-spacing: 1px;">Mountain Trekking Tours</h3>
-            <p style="color: #2d3a4a; font-size: 1rem; margin: 0;">Experience the breathtaking views from the Philippines’ highest peaks.</p>
+          <div class="experience-info">
+            <h3>Mountain Trekking Tours</h3>
+            <p>Experience the breathtaking views from the Philippines’ highest peaks.</p>
           </div>
         </div>
       </div>
     </div>
+    <style>
+      .experiences-title {
+        color: #003366;
+        font-family: 'Playfair Display', serif;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        font-size: 2rem;
+        letter-spacing: 1px;
+      }
+      .experiences-cards {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 2rem;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 1.5rem;
+        padding-left: 2vw;
+        padding-right: 2vw;
+      }
+      .experience-card {
+        background: #fffbe9;
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        border: 2px solid #d1e3ef;
+        min-width: 320px;
+        max-width: 90vw;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        scroll-snap-align: start;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .experience-card:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(0,51,102,0.13);
+      }
+      .experience-media {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0 1rem 0;
+      }
+      .experience-media video {
+        width: 90%;
+        max-width: 320px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        background: #e6e6e6;
+        box-shadow: 0 4px 16px rgba(0,51,102,0.10);
+      }
+      .experience-info {
+        padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+        width: 100%;
+      }
+      .experience-info h3 {
+        color: #003366;
+        font-weight: 800;
+        font-size: 1.18rem;
+        margin: 0 0 0.5rem 0;
+        letter-spacing: 1px;
+      }
+      .experience-info p {
+        color: #2d3a4a;
+        font-size: 1rem;
+        margin: 0;
+      }
+      @media (min-width: 900px) {
+        .experiences-cards {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.5rem;
+          overflow-x: visible;
+          justify-content: center;
+          padding-left: 8vw;
+          padding-right: 8vw;
+        }
+        .experience-card {
+          min-width: 0;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 600px) {
+        .experience-card {
+          min-width: 85vw;
+          width: 85vw;
+        }
+        .experience-media video {
+          height: 38vw;
+          min-height: 120px;
+        }
+      }
+    </style>
   </section>
 
   <footer id="footer-placeholder"></footer>
