@@ -58,9 +58,9 @@
       </div>
     </section>
     <section class="destinations-section" style="margin-top: 2.5rem;">
-      <div class="destinations-wrapper">
+      <div class="destinations-slider">
         <h2 class="destinations-title">Popular Destinations</h2>
-        <div class="destinations-cards">
+        <div class="destinations-cards-slider">
           <div class="destination-card">
             <div class="destination-media">
               <video src="about/about_Videos/Boracay.mp4" autoplay loop muted playsinline></video>
@@ -92,7 +92,7 @@
       </div>
     </section>
     <style>
-      .destinations-wrapper {
+      .destinations-slider {
         width: 100vw;
         max-width: 100vw;
         margin-left: calc(50% - 50vw);
@@ -106,17 +106,17 @@
         font-size: 2rem;
         letter-spacing: 1px;
       }
-      .destinations-cards {
+      .destinations-cards-slider {
         display: flex;
         flex-wrap: nowrap;
         gap: 2rem;
-        justify-content: flex-start;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         padding-bottom: 1.5rem;
         padding-left: 2vw;
         padding-right: 2vw;
+        justify-content: flex-start;
       }
       .destination-card {
         background: #fffbe9;
@@ -170,7 +170,7 @@
         margin: 0;
       }
       @media (min-width: 900px) {
-        .destinations-cards {
+        .destinations-cards-slider {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 2.5rem;
