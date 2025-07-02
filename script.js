@@ -48,4 +48,34 @@ document.addEventListener('DOMContentLoaded', function () {
       hamburger.classList.toggle('toggle');
     });
   }
+
+  // Highlight active nav link after header is loaded
+  function setActiveNavLink() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    if (!navLinks.length) return;
+    const currentPath = window.location.pathname.replace(/\\/g, '/');
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      const href = link.getAttribute('href');
+      if (
+        href === currentPath ||
+        (href.endsWith('index.html') && (currentPath === '/' || currentPath.endsWith('index.html')))
+      ) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // If header is loaded dynamically, wait for it
+  const headerPlaceholder = document.getElementById('header-placeholder');
+  if (headerPlaceholder) {
+    const observer = new MutationObserver(() => {
+      setActiveNavLink();
+    });
+    observer.observe(headerPlaceholder, { childList: true });
+    // Also try to set immediately in case header is already present
+    setActiveNavLink();
+  } else {
+    setActiveNavLink();
+  }
 });
