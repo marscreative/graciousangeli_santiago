@@ -57,8 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
     navLinks.forEach(link => {
       link.classList.remove('active');
       const href = link.getAttribute('href');
+      // Make the match flexible: check if currentPath ends with href, or if href ends with currentPath
       if (
-        href === currentPath ||
+        currentPath.endsWith(href.replace(/^\//, '')) ||
+        href.endsWith(currentPath.replace(/^\//, '')) ||
         (href.endsWith('index.html') && (currentPath === '/' || currentPath.endsWith('index.html')))
       ) {
         link.classList.add('active');
