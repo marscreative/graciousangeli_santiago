@@ -13,68 +13,195 @@
   <video autoplay loop muted playsinline class="nav-bg-video" style="position:fixed;z-index:-1;width:100vw;height:100vh;object-fit:cover;top:0;left:0;">
     <source src="../nav_background/Services BG.mp4" type="video/mp4">
   </video>
-  <div id="header-placeholder"></div>
+  <header class="header">
+  <div class="container header-container">
+    <a href="../index.html" class="logo">
+      <img src="../Logo_circle.png" alt="Gracious Angeli Logo" /> 
+      <span>GRACIOUS ANGELI' TRAVEL & TOURS</span>
+    </a>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about/about.html">About Us</a></li>
+        <li><a href="../services/services.html" class="active">Services</a></li>
+        <li><a href="../partners/partners.html">Partners</a></li>
+        <li><a href="../contacts/contacts.html">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+
   <main>
     <section class="services-section">
       <div class="container">
-        <h2>Our Services</h2>
+        <h2 class="services-title">Our Services</h2>
         <p class="section-intro">
           At Gracious Angeli' Travel & Tours, we offer a comprehensive range of travel services designed to meet all your travel needs. Whether you're booking flights, planning a cruise, or seeking visa assistance, our expert team is here to help.
         </p>
-        <div class="services-cards">
-          <div class="service-card">
-            <video autoplay loop muted playsinline width="320" height="240" class="service-video">
+        <div class="services-cards-slider">
+          <div class="service-card glass-card">
+            <video autoplay loop muted playsinline class="service-video">
               <source src="services_videos/Flight Booking.mp4" type="video/mp4" />
             </video>
             <h3>Flight Booking</h3>
             <p class="service-note">International and Domestic</p>
           </div>
-          <div class="service-card">
-            <video autoplay loop muted playsinline width="320" height="240" class="service-video">
+          <div class="service-card glass-card">
+            <video autoplay loop muted playsinline class="service-video">
               <source src="services_videos/Passport & Visa Assistance.mp4" type="video/mp4" />
             </video>
             <h3>PSA & Passport Online Assistance</h3>
           </div>
-          <div class="service-card">
-            <video autoplay loop muted playsinline width="320" height="240" class="service-video">
+          <div class="service-card glass-card">
+            <video autoplay loop muted playsinline class="service-video">
               <source src="services_videos/Travel Insurance.mp4" type="video/mp4" />
             </video>
             <h3>Travel Insurance</h3>
           </div>
-          <div class="service-card">
-            <video autoplay loop muted playsinline width="320" height="240" class="service-video">
+          <div class="service-card glass-card">
+            <video autoplay loop muted playsinline class="service-video">
               <source src="services_videos/Study Visa.mp4" type="video/mp4" />
             </video>
             <h3>Study Visa</h3>
           </div>
-          <div class="service-card">
-            <video autoplay loop muted playsinline width="320" height="240" class="service-video">
+          <div class="service-card glass-card">
+            <video autoplay loop muted playsinline class="service-video">
               <source src="services_videos/Immigrant Visa.mp4" type="video/mp4" />
             </video>
             <h3>Immigrant Visa</h3>
           </div>
-          <div class="service-card">
-            <img src="services_videos/Skilled Worker Visa.png" alt="Skilled Worker Visa" class="service-image" width="320" height="240" />
+          <div class="service-card glass-card">
+            <img src="services_videos/Skilled Worker Visa.png" alt="Skilled Worker Visa" class="service-image" />
             <h3>Tourist Visa</h3>
           </div>
-          <div class="service-card">
-            <video autoplay loop muted playsinline width="320" height="240" class="service-video">
+          <div class="service-card glass-card">
+            <video autoplay loop muted playsinline class="service-video">
               <source src="services_videos/Package Tour.mp4" type="video/mp4" />
             </video>
             <h3>Package Tour</h3>
             <p class="service-note">International and Domestic</p>
           </div>
-          <div class="service-card">
-            <img src="services_videos/Package ToursCruise Tours.jpg" alt="Package Tours/Cruise Tours" class="service-image" width="320" height="240" />
+          <div class="service-card glass-card">
+            <img src="services_videos/Package ToursCruise Tours.jpg" alt="Package Tours/Cruise Tours" class="service-image" />
             <h3>2GO Ferry Booking</h3>
           </div>
-          <div class="service-card">
-            <img src="services_videos/Hotel Booking.png" alt="Booking Assistance" class="service-image" width="320" height="240" />
+          <div class="service-card glass-card">
+            <img src="services_videos/Hotel Booking.png" alt="Booking Assistance" class="service-image" />
             <h3>Hotel Booking & Reservation</h3>
           </div>
         </div>
       </div>
     </section>
+    <style>
+      .services-title {
+        color: #003366;
+        font-family: 'Playfair Display', serif;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        font-size: 2rem;
+        letter-spacing: 1px;
+      }
+      .services-cards-slider {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 2rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 1.5rem;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        justify-content: flex-start;
+      }
+      .service-card {
+        background: #fffbe9;
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        border: 2px solid #d1e3ef;
+        min-width: 320px;
+        max-width: 90vw;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        scroll-snap-align: start;
+        transition: transform 0.2s, box-shadow 0.2s;
+        padding-bottom: 1rem;
+      }
+      .service-card:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(0,51,102,0.13);
+      }
+      .service-video, .service-image {
+        width: 90%;
+        max-width: 320px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        background: #e6e6e6;
+        box-shadow: 0 4px 16px rgba(0,51,102,0.10);
+        margin: 2rem 0 1rem 0;
+        display: block;
+      }
+      .service-card h3 {
+        color: #003366;
+        font-weight: 800;
+        font-size: 1.18rem;
+        margin: 0 0 0.5rem 0;
+        letter-spacing: 1px;
+      }
+      .service-note {
+        color: #2d3a4a;
+        font-size: 1rem;
+        margin: 0;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.35);
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        border: 1.5px solid rgba(209,227,239,0.35);
+        backdrop-filter: blur(8px) saturate(140%);
+        -webkit-backdrop-filter: blur(8px) saturate(140%);
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+      .glass-card:hover {
+        box-shadow: 0 8px 32px rgba(0,51,102,0.13);
+        transform: translateY(-6px) scale(1.03);
+      }
+      @media (min-width: 900px) {
+        .services-cards-slider {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2.5rem;
+          overflow-x: visible;
+          justify-content: center;
+          padding-left: 8vw;
+          padding-right: 8vw;
+        }
+        .service-card {
+          min-width: 0;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 600px) {
+        .service-card {
+          min-width: 85vw;
+          width: 85vw;
+        }
+        .service-video, .service-image {
+          height: 38vw;
+          min-height: 120px;
+        }
+      }
+    </style>
     <section class="market-section">
       <div class="container">
         <div class="main-card" style="background: rgba(245,251,255,0.55); border-radius: 18px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 2.2rem 2rem 2rem 2rem; margin-bottom: 2.5rem; border: 1.5px solid rgba(209,227,239,0.35); max-width: 100%;">
@@ -96,7 +223,7 @@
   <section class="experiences-section" style="margin: 2.5rem 0 0 0;">
     <div class="container">
       <h2 class="experiences-title">Travel Experiences</h2>
-      <div class="experiences-cards">
+      <div class="experiences-cards-slider">
         <div class="experience-card">
           <div class="experience-media">
             <video src="../services/services_Experience/Island Hopping.mp4" autoplay loop muted playsinline></video>
@@ -127,23 +254,25 @@
         font-size: 2rem;
         letter-spacing: 1px;
       }
-      .experiences-cards {
+      .experiences-cards-slider {
         display: flex;
         flex-wrap: nowrap;
         gap: 2rem;
-        justify-content: flex-start;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         padding-bottom: 1.5rem;
         padding-left: 2vw;
         padding-right: 2vw;
+        justify-content: flex-start;
       }
       .experience-card {
-        background: #fffbe9;
-        border-radius: 16px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-        border: 2px solid #d1e3ef;
+        background: rgba(255, 255, 255, 0.35);
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        border: 1.5px solid rgba(209,227,239,0.35);
+        backdrop-filter: blur(8px) saturate(140%);
+        -webkit-backdrop-filter: blur(8px) saturate(140%);
         min-width: 320px;
         max-width: 90vw;
         width: 350px;
@@ -155,8 +284,8 @@
         transition: transform 0.2s, box-shadow 0.2s;
       }
       .experience-card:hover {
-        transform: translateY(-6px) scale(1.03);
         box-shadow: 0 8px 32px rgba(0,51,102,0.13);
+        transform: translateY(-6px) scale(1.03);
       }
       .experience-media {
         width: 100%;
@@ -191,7 +320,7 @@
         margin: 0;
       }
       @media (min-width: 900px) {
-        .experiences-cards {
+        .experiences-cards-slider {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 2.5rem;
